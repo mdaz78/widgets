@@ -19,12 +19,24 @@ export default function Search() {
       setResults(data.query.search);
     };
 
-    search();
+    if (term) {
+      search();
+    }
   }, [term]);
 
   const renderedResults = results.map(({ title, snippet, pageid }) => {
     return (
       <div className='item' key={pageid}>
+        <div className='right floated content'>
+          <a
+            href={`https://en.wikipedia.org?curid=${pageid}`}
+            className='ui button'
+            target='_blank'
+            rel='noreferrer'
+          >
+            Go
+          </a>
+        </div>
         <div className='content'>
           <div className='header'> {title} </div>
           <span dangerouslySetInnerHTML={{ __html: snippet }}></span>
