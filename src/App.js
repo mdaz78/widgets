@@ -43,6 +43,7 @@ export default function App() {
       <Dropdown
         options={options}
         selected={selected}
+        labelName={'Select a beautiful color'}
         onSelectedChange={setSelected}
       />
     </div>
