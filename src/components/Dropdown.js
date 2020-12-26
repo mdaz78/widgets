@@ -4,7 +4,7 @@ export default function Dropdown({
   options,
   selected,
   onSelectedChange,
-  labelName,
+  label,
 }) {
   const [open, setOpen] = useState(false);
   const ref = useRef();
@@ -46,7 +46,7 @@ export default function Dropdown({
     <div className='ui form' ref={ref}>
       <div className='field'>
         <label htmlFor='' className='label'>
-          {labelName}
+          {label}
         </label>
         <div
           className={`ui selection dropdown ${open && 'visible active'}`}
